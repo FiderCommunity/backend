@@ -5,15 +5,19 @@ docker run --name db_fc -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=fider_communi
 yarn typeorm migration:run
 ```
 
+<br><br>
+
+
 ### Run: 
 ```yarn dev:server```
 
 
+<br><br>
 
 
 
+### Extra:
 
-Extra:
 Create container: ```docker run --name db_fc -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=fider_community -p 5432:5432 -d postgres```
 
 Stop and remove container: 
