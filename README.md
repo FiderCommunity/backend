@@ -3,6 +3,8 @@
 npm install
 docker run --name db_fc -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=fider_community -p 5432:5432 -d postgres
 yarn typeorm migration:run
+yarn seed
+
 ```
 
 <br><br>

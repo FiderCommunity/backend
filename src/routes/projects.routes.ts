@@ -7,8 +7,6 @@ import ensureAuthenticated from '../middlewares/EnsureAuthenticated';
 
 
 const projectsRouter = Router();
-// projectsRouter.use(ensureAuthenticated); // COLOCAR PARA APENAS UMA ROTA!!!!
-
 
 
 projectsRouter.get('/', async (request, response) => {
@@ -22,10 +20,10 @@ projectsRouter.get('/', async (request, response) => {
 
 projectsRouter.post('/', ensureAuthenticated, async (request, response) => {
   try {
-    const { url, name, description, user_id} = request.body;
+    const { url, name, description, user_id, logo_url} = request.body;
     
     const createProject = new CreateProjectService();
-    const project = await createProject.execute({ url, name, description, user_id });
+    const project = await createProject.execute({ url, logo_url, name, description, user_id });
 
     return response.json(project);
   }

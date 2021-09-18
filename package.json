@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "dev:server": "ts-node-dev --inspect --cls --respawn --no-notify --transpileOnly src/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "seed": "ts-node-dev ./node_modules/typeorm/cli.js migration:run -f src/database/seeds/seed-config.json"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",

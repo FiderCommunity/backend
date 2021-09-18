@@ -24,6 +24,9 @@ class Project {
   name: string;
 
   @Column()
+  logo_url: string;
+
+  @Column()
   description: string;
 
   @Column()

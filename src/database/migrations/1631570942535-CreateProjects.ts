@@ -25,6 +25,11 @@ export class CreateProjects1631570942535 implements MigrationInterface {
                 isNullable: false
               },
               {
+                name: "logo_url",
+                type: "varchar",
+                isNullable: false
+              },
+              {
                 name: "description",
                 type: "varchar",
                 isNullable: false
