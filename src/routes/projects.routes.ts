@@ -44,5 +44,24 @@ projectsRouter.get('/my-projects', ensureAuthenticated, async (request, response
 });
 
 
+projectsRouter.delete('/', ensureAuthenticated, async (request, response) => {
+  try {
+    const projectsRepository = getCustomRepository(ProjectsRepository);
+
+    const id = request.query.id as string;
+    const result = await projectsRepository.delete(id)
+
+    if(result.affected == 0) throw new Error('Invalid ID.');
+
+    return response.status(204).json({});
+  }
+  catch (e) {
+    const { message } = e as Error
+    return response.status(400).json({ message: message });
+  }
+});
+
+
+
 
 export default projectsRouter;
